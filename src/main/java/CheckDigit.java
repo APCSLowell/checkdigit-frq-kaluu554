@@ -9,11 +9,10 @@ public class CheckDigit
    {  
      /* to be implemented in part (a) */
      int sum = 0;
-     int right = num;
      for(int i = 1; i<= getNumberOfDigits(num); i++){
         sum += (8-i) * getDigit(num,i);
      }
-     return sum & 10;
+     return sum % 10;
    }
  
   /** Returns true if numWithCheckDigit is valid, or false    
@@ -27,7 +26,7 @@ public class CheckDigit
      /* to be implemented in part (b) */ 
      int check = numWithCheckDigit % 10;
      int num = numWithCheckDigit / 10;
-     int newCheck = getCheckNum(num);
+     int newCheck = getCheck(num);
      if(check == newCheck){
       return true;
      }
